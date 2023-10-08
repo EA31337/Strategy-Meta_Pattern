@@ -307,16 +307,18 @@ class Stg_Meta_Pattern : public Strategy {
     BarOHLC _ohlc[2];
     _ohlc[0] = _chart.GetOHLC(_ishift);
     _ohlc[1] = _chart.GetOHLC(_ishift + 1);
-    PatternCandle1 _pattern1(_ohlc[0]);
-    PatternCandle2 _pattern2(_ohlc);
-    if (_pattern2.CheckPattern(::Meta_Pattern_Strategy_Pattern_2CandlePattern)) {
-      _strat_ref = strats.GetByKey(2);
-      if (_strat_ref.IsSet()) {
-        return _strat_ref;
+    if (_ohlc[0].open > 0 && _ohlc[1].open > 0) {  // Checks for invalid candles.
+      PatternCandle1 _pattern1(_ohlc[0]);
+      PatternCandle2 _pattern2(_ohlc);
+      if (_pattern2.CheckPattern(::Meta_Pattern_Strategy_Pattern_2CandlePattern)) {
+        _strat_ref = strats.GetByKey(2);
+        if (_strat_ref.IsSet()) {
+          return _strat_ref;
+        }
       }
-    }
-    if (_pattern1.CheckPattern(::Meta_Pattern_Strategy_Pattern_1CandlePattern)) {
-      _strat_ref = strats.GetByKey(1);
+      if (_pattern1.CheckPattern(::Meta_Pattern_Strategy_Pattern_1CandlePattern)) {
+        _strat_ref = strats.GetByKey(1);
+      }
     }
     return _strat_ref;
   }
