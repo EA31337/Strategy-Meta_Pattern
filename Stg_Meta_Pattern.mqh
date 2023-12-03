@@ -9,13 +9,13 @@
 
 // User input params.
 INPUT2_GROUP("Meta Pattern strategy: main params");
-INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_Main = STRAT_OSCILLATOR_CROSS_SHIFT;  // Main strategy
+INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_Main = STRAT_AWESOME;  // Main strategy
 INPUT2 ENUM_PATTERN_1CANDLE Meta_Pattern_Strategy_Pattern_1CandlePattern =
-    PATTERN_1CANDLE_BODY_GT_WICKS;                                                        // 1-candle pattern
-INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_1CandlePatternStrat = STRAT_MA_TREND;  // 1-candle pattern strategy
+    PATTERN_1CANDLE_BODY_GT_WICKS;                                                         // 1-candle pattern
+INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_1CandlePatternStrat = STRAT_INDICATOR;  // 1-candle pattern strategy
 INPUT2 ENUM_PATTERN_2CANDLE Meta_Pattern_Strategy_Pattern_2CandlePattern =
-    PATTERN_2CANDLE_RANGE_IN_RANGE;                                                         // 2-candle pattern
-INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_2CandlePatternStrat = STRAT_OSCILLATOR;  // 2-candle pattern strategy
+    PATTERN_2CANDLE_WICKS_GT_WICKS;                                                         // 2-candle pattern
+INPUT2 ENUM_STRATEGY Meta_Pattern_Strategy_Pattern_2CandlePatternStrat = STRAT_STOCHASTIC;  // 2-candle pattern strategy
 INPUT3_GROUP("Meta Pattern strategy: common params");
 INPUT3 float Meta_Pattern_LotSize = 0;                // Lot size
 INPUT3 int Meta_Pattern_SignalOpenMethod = 0;         // Signal open method
